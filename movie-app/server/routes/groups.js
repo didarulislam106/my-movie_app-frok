@@ -1,6 +1,5 @@
 import express from 'express';
 import pool from '../db.js';
-// import authenticateUser from '../middleware/authenticateUser.js';
 
 const router = express.Router();
 
@@ -15,7 +14,7 @@ router.post('/create', async (req, res) => {
 
     try {
         const insertGroupQuery = `
-            INSERT INTO Groups (id, name, description, owner_id)
+            INSERT INTO Groups (group_id, name, description, owner_id)
             VALUES (DEFAULT, $1, $2, $3)
             RETURNING *;
         `;
