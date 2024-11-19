@@ -7,7 +7,7 @@ const GroupForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Submitting form with:', { name, description }); // Add logging
+       // console.log('Submitting form with:', { name, description }); // Add logging
         try {
             const response = await axios.post('http://localhost:3000/api/groups/create', {
                 name,

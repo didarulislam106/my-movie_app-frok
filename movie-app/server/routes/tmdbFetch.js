@@ -1,6 +1,6 @@
 import express from 'express';
 import axios from 'axios';
-import pool from '../db.js';
+import pool from '../helpers/db.js';
 import dotenv from 'dotenv';
 
 dotenv.config();

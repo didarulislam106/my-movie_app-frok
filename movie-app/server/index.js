@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import groupsRouter from './routes/groups.js';
 import movieRouter from './routes/movie.js';
 import tmdbFetchRouter from './routes/tmdbFetch.js';
@@ -8,6 +9,13 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Enable cors in frontend url
+app.use(cors({ origin: 'http://localhost:3001',
+   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+   credentials: true
+ }));
+
 
 app.use(express.json());
 
